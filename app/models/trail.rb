@@ -1,5 +1,5 @@
 class Trail < ApplicationRecord
   TYPES = %w[Loop Point-to-Point].freeze
 
-  validates :type, inclusion: { in: TYPES }
+  validates :trail_type, inclusion: { in: TYPES }
 end
