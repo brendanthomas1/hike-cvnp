@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.1.0.rc1'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
-gem 'haml-rails'
+gem 'haml-rails', '~> 0.9'
 gem 'sass-rails', github: "rails/sass-rails"
 
 gem 'uglifier', '>= 1.3.0'
@@ -18,12 +18,16 @@ gem 'webpacker'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'rubocop'
+
 group :development, :test do
   gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
+  gem 'simplecov'
 end
 
 group :development do
