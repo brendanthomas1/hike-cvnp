@@ -1,8 +1,5 @@
 %h2 Trails
 
-%ul
-  - @trails.map do |trail|
-    %li= trail.name
-
-#app
-= javascript_pack_tag 'hello_react'
+#trail-list{ data: { trails: @trails.to_json } }
+  
+= javascript_pack_tag 'trails'
