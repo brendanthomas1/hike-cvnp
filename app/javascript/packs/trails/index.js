@@ -4,6 +4,7 @@ import { createStore } from 'redux'
 
 import TrailList from './components/trail-list.js.jsx'
 
+// ...This can't be the best way
 const trailData = document.getElementById('trail-list')
 
 document.addEventListener('DOMContentLoaded', () => {
