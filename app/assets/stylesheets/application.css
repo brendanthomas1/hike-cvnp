@@ -15,3 +15,8 @@
  *= require normalize
  *= require skeleton
  */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato';
+}
