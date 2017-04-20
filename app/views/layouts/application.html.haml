@@ -9,4 +9,5 @@
   %body
     - if current_user
       = render partial: 'layouts/navbar'
-    = yield
+    .container
+      = yield

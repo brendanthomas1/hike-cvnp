@@ -1,0 +1,16 @@
+.row
+  .new-trail.twelve.columns
+    = form_for Trail.new do |f|
+      .row
+        .twelve.columns
+          = f.label :name
+          = f.text_field :name, class: 'u-full-width'
+      .row
+        .six.columns
+          = f.label :distance
+          = f.number_field :distance, step: 0.1, class: 'u-full-width'
+        .six.columns
+          = f.label :trail_type
+          = f.select :trail_type, Trail::TYPES , {}, class: 'u-full-width'
+
+      = f.submit class: 'button-primary u-pull-right'
