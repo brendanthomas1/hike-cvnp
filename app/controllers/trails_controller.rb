@@ -1,5 +1,6 @@
 class TrailsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: :index
+  before_action :authenticate_admin, only: %i[new create show]
   before_action :set_trail, only: :show
   before_action :new_trail, only: :create
 
