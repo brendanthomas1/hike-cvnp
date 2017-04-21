@@ -1,14 +1,16 @@
 class TrailsController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :authenticate_admin, only: %i[new create show]
-  before_action :set_trail, only: %i[show update]
+  before_action :set_trail, only: %i[show update destroy]
   before_action :new_trail, only: :create
 
   def index
     @trails = Trail.all
   end
 
-  def new; end
+  def new
+    @trails = Trail.all
+  end
 
   def create
     if @trail.save
@@ -26,6 +28,11 @@ class TrailsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def destroy
+    @trail.destroy
+    redirect_to new_trail_path
   end
 
   private

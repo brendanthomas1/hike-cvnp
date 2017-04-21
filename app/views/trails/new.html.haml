@@ -14,3 +14,16 @@
           = f.select :trail_type, Trail::TYPES , {}, class: 'u-full-width'
 
       = f.submit class: 'button-primary u-pull-right'
+
+.row
+  .all-trails.twelve.columns
+    %table.u-full-width
+      %thead
+        %tr
+          %th Name
+          %th
+      %tbody
+        - @trails.map do |trail|
+          %tr
+            %td= link_to trail.name, trail_path(trail)
+            %td= link_to icon('close'), trail_path(trail), method: :delete
