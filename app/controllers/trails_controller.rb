@@ -1,7 +1,7 @@
 class TrailsController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :authenticate_admin, only: %i[new create show]
-  before_action :set_trail, only: :show
+  before_action :set_trail, only: %i[show update]
   before_action :new_trail, only: :create
 
   def index
@@ -19,6 +19,14 @@ class TrailsController < ApplicationController
   end
 
   def show; end
+
+  def update
+    if @trail.update trail_params
+      redirect_to trail_path @trail
+    else
+      render :show
+    end
+  end
 
   private
 
